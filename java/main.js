@@ -15,10 +15,18 @@ function burgerMenu(selector) {
     function toggleMenu() {
         menu.toggleClass('burger-menu_active');
 
+
         if (menu.hasClass('burger-menu_active')) {
-            $('body').css('overflow', 'hidden');
+            // $('body').css('overflow', 'hidden');
+
+
+            const block = $('html').scrollTop();
+            $(window).on('scroll', () => $('html').scrollTop(block));
         } else {
-            $('body').css('overflow', 'visible');
+            // $('body').css('overflow', 'visible');
+
+
+            $(window).off('scroll');
         }
     }
 }
